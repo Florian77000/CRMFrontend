@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="fr">
       <body>
-        <main className="h-[90vh] flex flex-col gap-5 my-5 px-5 bg-gray-500">{children}</main>
+        <main className="h-[90vh] flex flex-col gap-5 px-5 ">{children}</main>
         <Navbar />
       </body>
     </html>
