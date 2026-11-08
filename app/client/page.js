@@ -15,7 +15,7 @@ export default function Client () {
 };
 
     const fetchClient = () => {
-        fetch('crmbackend-flax.vercel.app/clients')
+        fetch('cr-mbackend-murex.vercel.app/clients')
         .then(res => res.json())
         .then(data => {
             console.log('data: ', data.data);
