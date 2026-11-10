@@ -6,7 +6,7 @@ export default function Navbar() {
 
     const icon = [
         {logo:faHouse, href:'/'},
-        {logo:faUserGroup, href:'/client'},
+        {logo:faUserGroup, href:'/clients'},
         {logo:faCalendarDays, href:'/'},
         {logo:faFileLines, href:'/'},
         {logo:faList, href:'/'},
