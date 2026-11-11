@@ -9,9 +9,10 @@ export default function Client () {
     const [search, setSearch] = useState('')
 
     const getCatColor = (cat) => {
-    if (cat === 'devis') return 'text-yellow-500 bg-yellow-200';
-    if (cat === 'facture') return 'text-red-500 bg-red-200';
-    if (cat === 'prospect') return 'text-blue-500 bg-blue-200';
+    if (cat === 'Devis') return 'text-yellow-500 bg-yellow-200/50';
+    if (cat === 'Facture') return 'text-red-500 bg-red-200/50';
+    if (cat === 'Prospect') return 'text-blue-500 bg-blue-200/50';
+    if (cat === 'Payé') return 'text-green-500 bg-green-200/50';
     return 'text-gray-500';
 };
 
@@ -32,8 +33,6 @@ export default function Client () {
             e.name.toLowerCase().includes(search.toLowerCase()) ||
             e.city.toLowerCase().includes(search.toLocaleLowerCase())
         )
-
-        
 
     return (
         <div className="min-h-screen pb-[10vh] px-5 p">
