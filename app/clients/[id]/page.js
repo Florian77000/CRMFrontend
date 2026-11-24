@@ -2,12 +2,19 @@
 
 import {useState, useEffect} from "react";
 import { useParams, useRouter } from "next/navigation";
+import { format } from 'date-fns';
+import { fr } from 'date-fns/locale';
 
 export default function ClientId () {
 
      const { id } = useParams();
      const router = useRouter();
      const [client, setClient] = useState(null);
+
+     const formatDate = (date) => {
+        return format(new Date(date), 'd/MM/yyyy', {
+        locale: fr
+    });};
 
     useEffect(() => {
         // fetch(`https://cr-mbackend-murex.vercel.app/clients/${id}`)
@@ -37,8 +44,12 @@ export default function ClientId () {
                 <h1>Fiche client</h1>
             </div>
             <div>
+                <p>{client.lastname}</p>
                 <p>{client.name}</p>
-                <p>{client.phone}</p>
+                <p>{client.address.city}</p>
+                <p>{client.phone.replace(/(\d{2})(?=\d)/g, '$1 ')}</p>
+                <p>date de création : {formatDate(client.date)}</p>
+                <p></p>
                 <p></p>
             </div>
             

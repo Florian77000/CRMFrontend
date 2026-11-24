@@ -5,11 +5,15 @@ import { useState, useEffect } from "react"
 export default function Add () {
 
     const [name, setName] = useState("");
+    const [lastname, setLastname] = useState("");
     const [phone, setPhone] = useState("");
     const [displayAddress, setDisplayAddress] = useState("");
     const [street, setStreet] = useState("");
     const [city, setCity] = useState("");
-    const [cat, setCat] = useState("");
+    const [postCode, setPostCode] = useState("");
+    const [cat, setCat] = useState("Prospect");
+    const [type, setType] = useState("Particulier");
+    const [home, setHome] = useState("Maison individuelle");
 
     const [suggestions, setSuggestions] = useState([]); 
 
@@ -34,22 +38,30 @@ export default function Add () {
                 headers:{"content-type":"application/json"},
                 body:JSON.stringify({
                     name:name,
+                    lastname:lastname,
                     phone:phone,
                     address:{
                         street : street,
                         city : city,
+                        postCode : postCode,
                     },
-                    cat:cat
+                    cat:cat,
+                    type:type,
+                    home:home,
                 })
             })
             .then((res) => res.json())
             .then(()=> {
-                setName('')
+                setName('');
+                setLastname('');
                 setPhone('');
                 setDisplayAddress('')
                 setStreet('');
                 setCity('');
-                setCat('')
+                setPostCode('');
+                setCat('Prospect')
+                setType('Particulier');
+                setHome("Maison individuelle");
             })
         }
 
@@ -59,7 +71,7 @@ export default function Add () {
                 <h1>Client</h1>
                 <h2 className="text-center">Ajouter un client</h2>
             </div>
-
+            
             <div className="flex flex-col gap-5 p-5">         
 
             <div className="flex justify-between">
@@ -70,6 +82,15 @@ export default function Add () {
                 className="border w-[70%] rounded-md"
                 />
             </div>   
+
+            <div className="flex justify-between">
+                <h3>Prénom</h3>
+                <input type='text' 
+                onChange={(e) =>setLastname(e.target.value)} value={lastname}
+                placeholder="Entrer le nom"
+                className="border w-[70%] rounded-md"
+                />
+            </div> 
             
             <div className="flex justify-between">
                 <h3>Téléphone</h3>
@@ -89,11 +110,12 @@ export default function Add () {
                         value={displayAddress}
                         onChange={(e) => {setDisplayAddress(e.target.value);
                                           setStreet(e.target.value)
-                                          setCity('')}}             
+                                          setCity('')
+                                          setPostCode('')}}             
                         placeholder="Entrer une adresse"
                         className="font-bold"
                     />
-                    {(suggestions || []).map((e, i) => ( // le || [] permet le crash si pas de retour de l'api
+                    {(suggestions || []).map((e, i) => ( // le || [] permet d'éviter le crash si pas de retour de l'api
                     <p
                     key={i}
                     className="text-gray-500"
@@ -101,10 +123,10 @@ export default function Add () {
                         setDisplayAddress(e.properties.label);
                         setStreet(e.properties.name);
                         setCity(e.properties.city);
+                        setPostCode(e.properties.postcode);
                         setSuggestions([]);
                     }}
                     >
-                    
                     {e.properties.label}
                     </p>
                     ))}
@@ -121,6 +143,29 @@ export default function Add () {
                     <option>Devis</option>
                     <option>Facture</option>
                     <option>Payé</option>
+                </select>    
+            </div>
+
+            <div className="flex justify-between">
+                <h3>Type de client</h3>
+                <select type='text' 
+                onChange={(e) =>setType(e.target.value)} value={type}
+                placeholder="Entrer la catégorie"
+                className="border w-[70%] rounded-md">
+                    <option>Particulier</option>
+                    <option>Professionnel</option>
+                    <option>Autre</option>
+                </select>    
+            </div>
+
+            <div className="flex justify-between">
+                <h3>Installation</h3>
+                <select type='text' 
+                onChange={(e) =>setHome(e.target.value)} value={home}
+                placeholder="Entrer la catégorie"
+                className="border w-[70%] rounded-md">
+                    <option>Maison individuelle</option>
+                    <option>Appartement</option>
                 </select>    
             </div>
             
