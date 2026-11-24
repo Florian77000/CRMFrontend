@@ -1,5 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser,faCalendarDays, faClock ,faTriangleExclamation } from '@fortawesome/free-solid-svg-icons'
+import { format } from 'date-fns';
+import { fr } from 'date-fns/locale';
 
 export default function Home() {
 
@@ -10,12 +12,15 @@ export default function Home() {
     {name:'Facture en retard',color:'bg-red-100', logo:faTriangleExclamation, colorLogo:'text-red-500', bgColor:'bg-red-50'},
   ]
 
+  const date = format(new Date(), 'EEEE d MMMM yyyy',{locale:fr})
+
   return (
     <div className='flex flex-col h-full'>
+      
 
       <div className="bg-gray-100/50">
         <h1 className="font-bold">Bonjour Thomas👋</h1>
-        <p className="opacity-80">Mercredi 16 octobre 2026</p>
+        <p className="opacity-80">{date}</p>
       </div>
       
       <div className='h-full flex flex-col justify-around px-5'>
@@ -43,6 +48,6 @@ export default function Home() {
       </div>
 
     </div>
-    
+   
   );
 }
