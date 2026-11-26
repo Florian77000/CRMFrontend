@@ -17,8 +17,8 @@ export default function Client () {
 };
 
     const fetchClient = () => {
-        // fetch('https://cr-mbackend-murex.vercel.app/clients')
-        fetch('http://localhost:3000/clients')
+        fetch('https://cr-mbackend-murex.vercel.app/clients')
+        // fetch('http://localhost:3000/clients')
         .then(res => res.json())
         .then(data => {
             setClients(data.data)

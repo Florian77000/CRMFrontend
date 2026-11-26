@@ -21,8 +21,8 @@ export default function ClientId () {
     });};
 
     useEffect(() => {
-        // fetch(`https://cr-mbackend-murex.vercel.app/clients/${id}`)
-        fetch(`http://localhost:3000/clients/${id}`)
+        fetch(`https://cr-mbackend-murex.vercel.app/clients/${id}`)
+        // fetch(`http://localhost:3000/clients/${id}`)
         .then((res) => res.json())
         .then((data) => {
             setClient(data.data)
@@ -30,9 +30,12 @@ export default function ClientId () {
     }, [id]);
     
     const deleteClient = () => {
-        fetch(`http://localhost:3000/clients/${id}/delete`, {
+        fetch(`https://cr-mbackend-murex.vercel.app/clients/${id}/delete`, {
             method:'DELETE'
         })
+        // fetch(`http://localhost:3000/clients/${id}/delete`, {
+        //     method:'DELETE'
+        // })
         .then((res) => res.json())
         .then(() => {
             router.push('/clients');
