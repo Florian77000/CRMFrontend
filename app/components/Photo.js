@@ -36,22 +36,26 @@ export default function Photo() {
           overflow: "hidden"
         }}
       />
-
-      <button onClick={toggleCameraFacing}>
-        Changer de caméra
-      </button>
-
-      <button onClick={takePhoto}>
-        Prendre une photo
-      </button>
-
-      {photo && (
+        <div className="flex justify-center gap-5">
+            <button className="border-4 w-10 h-10 rounded-full ">
+            ❌
+            </button>
+             <button onClick={takePhoto}
+            className="border-4 w-10 h-10 rounded-full">
+            </button>
+            <button onClick={toggleCameraFacing}
+            className="border-4 w-10 h-10 rounded-full">
+            🔄️
+            </button>
+        </div>
+      
+      {/* {photo && (
         <img
           src={photo}
           alt="Photo capturée"
           style={{ width: "100%" }}
         />
-      )}
+      )} */}
     </div>
   );
 }
