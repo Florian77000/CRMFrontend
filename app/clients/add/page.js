@@ -7,6 +7,7 @@ export default function Add () {
     const [name, setName] = useState("");
     const [lastname, setLastname] = useState("");
     const [phone, setPhone] = useState("");
+    const [email, setEmail] = useState("");
     const [displayAddress, setDisplayAddress] = useState("");
     const [street, setStreet] = useState("");
     const [city, setCity] = useState("");
@@ -40,6 +41,7 @@ export default function Add () {
                     name:name,
                     lastname:lastname,
                     phone:phone,
+                    email:email,
                     address:{
                         street : street,
                         city : city,
@@ -55,6 +57,7 @@ export default function Add () {
                 setName('');
                 setLastname('');
                 setPhone('');
+                setEmail('');
                 setDisplayAddress('')
                 setStreet('');
                 setCity('');
@@ -98,6 +101,15 @@ export default function Add () {
                 onChange={(e) =>setPhone(e.target.value.replace(/[^0-9]/g, ""))} value={phone}
                 placeholder="Entrer le telephone"
                 maxLength={10}
+                className="border w-[70%] rounded-md"
+                />
+            </div>
+
+            <div className="flex justify-between">
+                <h3>Email</h3>
+                <input type='email' 
+                onChange={(e) =>setEmail(e.target.value)} value={email}
+                placeholder="Entrer l'email"
                 className="border w-[70%] rounded-md"
                 />
             </div>

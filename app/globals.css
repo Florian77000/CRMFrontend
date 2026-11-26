@@ -28,7 +28,7 @@ body {
 }
 
 .btn {
-    border-radius: 20px;
+    border-radius: 10px;
     color: white;
     font-weight: bold;
     width: 100%;
@@ -40,4 +40,18 @@ body {
 }
 .btn-danger {
     background-color: #ff0000;
+}
+
+.title {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.s_title {
+  font-size: 26px;
+}
+
+.title2 {
+  font-size : 20px;
+  font-weight: bold;
 }

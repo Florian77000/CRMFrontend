@@ -37,7 +37,7 @@ export default function Client () {
         <div className="min-h-screen pb-[10vh] px-5 p">
 
             <div className="flex justify-between items-center">
-                <h1 className="text-2xl font-bold">Mes clients</h1>
+                <h1 className={'title'}>Mes clients</h1>
                 <Link href={'/clients/add'} className="bg-(--primaire) w-6 h-6 flex justify-center items-center rounded-full text-2xl text-white">+</Link>
             </div>
             
