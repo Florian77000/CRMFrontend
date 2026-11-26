@@ -16,7 +16,7 @@ export default function Navbar() {
         <nav className='h-[7vh] bg-white fixed bottom-0 left-0 w-full flex justify-around items-center shadow-2xl border-t-2 border-gray-200'>
             {icon.map((e,i) => (
                 <Link key={i} href={e.href}>
-                <FontAwesomeIcon className='w-8 h-8 text-(--primaire)' icon={e.logo} />
+                <FontAwesomeIcon className='w-10 h-10 text-(--primaire)' icon={e.logo} />
                 </Link>
             ))}
         </nav>

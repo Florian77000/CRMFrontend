@@ -15,7 +15,7 @@ export default function Home() {
   const date = format(new Date(), 'EEEE d MMMM yyyy',{locale:fr})
 
   return (
-    <div className='flex flex-col h-full'>
+    <div className='flex flex-col h-screen pb-5 border border-amber-500'>
       
 
       <div className="bg-gray-100/50">

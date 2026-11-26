@@ -34,7 +34,7 @@ export default function Client () {
     );
 
     return (
-        <div className="min-h-screen pb-[10vh] px-5 p">
+        <div className="min-h-screen pb-[10vh] px-5">
 
             <div className="flex justify-between items-center">
                 <h1 className={'title'}>Mes clients</h1>
