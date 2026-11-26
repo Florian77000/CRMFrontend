@@ -2,6 +2,7 @@
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPhone, faLocationDot, faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import Photo from '@/app/components/Photo';
 
 import {useState, useEffect} from "react";
 import { useParams, useRouter } from "next/navigation";
@@ -125,7 +126,7 @@ export default function ClientId () {
                     {tab === 'historique' && (
                         <div>
                             <h2 className='title2 '>Historique du client</h2>
-                            <p>Affichage des interventions et événements...</p>
+                            <Photo />
                         </div>
                     )}
 

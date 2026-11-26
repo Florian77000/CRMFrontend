@@ -8,7 +8,7 @@ export default function Navbar() {
         {logo:faHouse, href:'/'},
         {logo:faUserGroup, href:'/clients'},
         {logo:faCalendarDays, href:'/'},
-        {logo:faFileLines, href:'/'},
+        {logo:faFileLines, href:'/photo'},
         {logo:faList, href:'/'},
     ]
         
