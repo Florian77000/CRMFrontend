@@ -3,7 +3,7 @@
 import { useState, useRef } from "react";
 import { Camera } from "react-webcam-pro";
 
-export default function Photo() {
+export default function Photo({clientId}) {
   const cameraRef = useRef(null);
 
   const [facing, setFacing] = useState("environment");
@@ -49,13 +49,13 @@ export default function Photo() {
             </button>
         </div>
       
-      {/* {photo && (
+      {photo && (
         <img
           src={photo}
           alt="Photo capturée"
           style={{ width: "100%" }}
         />
-      )} */}
+      )}
     </div>
   );
 }

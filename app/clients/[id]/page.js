@@ -16,6 +16,7 @@ export default function ClientId () {
      const [client, setClient] = useState(null);
      const [tab, setTab] = useState('infos')
 
+
      const formatDate = (date) => {
         return format(new Date(date), 'd/MM/yyyy', {
         locale: fr
@@ -126,7 +127,6 @@ export default function ClientId () {
                     {tab === 'historique' && (
                         <div>
                             <h2 className='title2 '>Historique du client</h2>
-                            <Photo />
                         </div>
                     )}
 
